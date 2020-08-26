@@ -1,11 +1,13 @@
 class Player {
   constructor(){
     this.index = null;
-    this.bp=null;
     this.name = null;
     this.password=null;
-    this.bp = null;
 
+    this.bloodPressure=25;
+    this.oxygenRate= 0;
+    this.waterIntake = 0;
+    this.pulseRate=0;
   }
 
   getCount(){
@@ -27,16 +29,18 @@ class Player {
     database.ref(playerIndex).set({
       name:this.name,
       password:this.password,
-      index:this.index
+      index:this.index,
+      
     });
   }
   updateData(){
     var playerIndex = "players/player" + this.index;
   
     database.ref(playerIndex).update({
-      O2:this.O2
-      
-
+      bloodPressure:this.bloodPressure,
+      oxygenRate:this.oxygenRate,
+      waterIntake:this.waterIntake,
+      pulseRate:this.pulseRate
     });
   }
 

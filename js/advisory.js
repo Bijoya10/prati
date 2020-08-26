@@ -14,10 +14,6 @@ class Advisory{
         this.text3.hide();
         this.text4.hide();
         this.text5.hide();
-        this.O2.hide();
-        this.bp.hide();
-        this.p.hide();
-        this.w.hide();
     }
     display(){
         this.logout.position(window.innerWidth-1500,window.innerHeight-600);

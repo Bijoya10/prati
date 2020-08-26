@@ -5,10 +5,10 @@ class UserData{
         this.text8=createElement("h2");
         this.text9=createElement("h2");
 
-        this.O2=createInput(player.O2);
-        this.bp=createInput(player.bp);
-        this.p=createInput(player.p);
-        this.w=createInput(player.w);
+        this.oxygenRate=createInput(player.oxygenRate);
+        this.bloodPressure=createInput(player.bloodPressure);
+        this.pulseRate=createInput(player.pulseRate);
+        this.waterIntake=createInput(player.waterIntake);
 
         
 
@@ -17,24 +17,27 @@ class UserData{
         this.data.position(window.innerWitdh/2-100,window.innerHeight/2+800);
         
     }
+   
     display(){
         clear();
         background("black");
+
         this.text6.html("Oxygen level");
         this.text6.position(window.innerWidth/2-25,150);
-        this.O2.position(window.innerWidth/2+190,170);
+        
+        this.oxygenRate.position(window.innerWidth/2+190,170);
         
         this.text7.html("Blood Pressure level");
         this.text7.position(window.innerWidth/2-25,250);
-        this.bp.position(window.innerWidth/2+190,270);
+        this.bloodPressure.position(window.innerWidth/2+190,270);
      
         this.text8.html("Pulse rate");
         this.text8.position(window.innerWidth/2-25,350);
-        this.p.position(window.innerWidth/2+190,370);
+        this.pulseRate.position(window.innerWidth/2+190,370);
 
         this.text9.html("Water intake in glasses");
         this.text9.position(window.innerWidth/2-25,450);
-        this.w.position(window.innerWidth/2+190,470);
+        this.waterIntake.position(window.innerWidth/2+190,470);
 
         this.save.position(window.innerWidth/2,550);
         this.data.position(window.innerWidth/2+600,200);
@@ -60,10 +63,10 @@ class UserData{
         })
     
     this.save.mousePressed(()=>{
-        player.O2=this.O2.value();
-        player.w=this.w.value();
-        player.p=this.p.value();
-        player.bp=this.bp.value();
+        player.oxygenRate=this.oxygenRate.value();
+        player.waterIntake=this.waterIntake.value();
+        player.pulseRate=this.pulseRate.value();
+        player.bloodPressure=this.bloodPressure.value();
         player.updateData();
      })
     }
